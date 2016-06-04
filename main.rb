@@ -32,6 +32,8 @@ loop do
   ]
 
   available_deposit_balances.each do |currency, amount|
+    next if currency == 'eth'
+
     # Get the edge of the order book
     best_ask = BigDecimal.new(client.funding_book(currency, limit_bids: 1, limit_asks: 1)['asks'][0]['rate'])
     our_ask  = best_ask - BigDecimal('0.1')
