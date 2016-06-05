@@ -46,7 +46,7 @@ loop do
         OFFER_DURATION,
         'lend'
       )
-      puts "Placed offer for #{currency} #{amount} at #{our_ask.to_s('F')}% per year}"
+      puts "Placed offer for #{currency} #{amount} at #{our_ask.to_s('F')}% per year"
     rescue Bitfinex::BadRequestError => e
       # Super janky but it's not worth it to figure this out ourselves
       if !(e.message.include?('minimum is 50 dollar') || e.message.include?('must be positive'))
