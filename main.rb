@@ -51,6 +51,6 @@ begin
 rescue Bitfinex::BadRequestError => e
   # Super janky but it's not worth it to figure this out ourselves
   if !(e.message.include?('minimum is 50 dollar') || e.message.include?('must be positive'))
-    puts e
+    raise e
   end
 end
