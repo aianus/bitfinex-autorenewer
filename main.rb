@@ -8,7 +8,6 @@ require 'bigdecimal'
 
 CURRENCY = (ENV['CURRENCY'] || 'usd').downcase
 OFFER_DURATION = (ENV['OFFER_DURATION'] || '2').to_i
-POLLING_INTERVAL = (ENV['POLLING_INTERVAL'] || '120').to_i
 
 Bitfinex::Client.configure do |conf|
   conf.secret = ENV["BFX_API_SECRET"]
