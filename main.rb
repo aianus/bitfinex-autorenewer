@@ -50,7 +50,7 @@ begin
   puts "Placed offer for #{CURRENCY.upcase}#{available_deposit_balance} at #{our_ask.to_s('F')}% per year"
 rescue Bitfinex::BadRequestError => e
   # Super janky but it's not worth it to figure this out ourselves
-  if !(e.message.include?('minimum is 50 dollar') || e.message.include?('must be positive'))
+  if !(e.message.include?('minimum is 50 dollar') || e.message.include?('must be positive') || e.message.include?('not enough'))
     raise e
   end
 end
